@@ -12,9 +12,17 @@
 
 .navbar-brand {
     width: 150px;
-  }
+}
   
-  .navbar-brand > img {
+.navbar-brand > img {
     width: 100%;
     margin-left: 5%;
-  }
+}
+
+.bg-color {
+  background-color: rgb(188, 230, 249);
+}
+
+a:hover{
+  color: red;
+}

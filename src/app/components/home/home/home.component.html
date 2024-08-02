@@ -1,53 +1,80 @@
 <h3 class="text-center mt-5">Please enter below details to register!</h3>
 
-<div class="p-4">
-    <div class="row mt-4 justify-content-center">
-      <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+<div class="alert alert-success" [ngClass]="messageSuccess == false ? 'visually-hidden' : '' " role="alert">
+    Customer data saved successfully!
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col">
         <div class="form-group">
             <label for="name">First Name</label>
-            <input type="text" class="form-control" id="firstName" required name="firstName">
+            <input type="text" class="form-control" id="firstName" required name="firstName" [(ngModel)]=customer.firstName>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+      <div class="col">
         <div class="form-group">
             <label for="power">Last Name</label>
-            <input type="text" class="form-control" id="firstName" required name="firstName">
+            <input type="text" class="form-control" id="lastName" required name="lastName" [(ngModel)]=customer.lastName>
           </div>
       </div>
     </div>
      
-    <div class="row mt-4 justify-content-center">
-      <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+    <div class="row">
+      <div class="col">
         <div class="form-group">
             <label for="name">Phone Number</label>
-            <input type="text" class="form-control" id="phoneNumber" required name="phoneNumber">
+            <input type="text" class="form-control" id="phoneNumber" required name="phoneNumber" [(ngModel)]=customer.phoneNumber>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+      <div class="col">
         <div class="form-group">
             <label for="power">Aadhar Number</label>
-            <input type="text" class="form-control" id="aadharNumber" required name="aadharNumber">
+            <input type="text" class="form-control" id="aadharNumber" required name="aadharNumber" [(ngModel)]=customer.aadharNumber>
           </div>
       </div>
     </div>
 
-    <div class="row mt-4 justify-content-center">
-      <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+    <div class="row">
+      <div class="col">
         <div class="form-group">
             <label for="name">Address Line 1</label>
-            <input type="text" class="form-control" id="addressLine1" required name="addressLine1">
+            <input type="text" class="form-control" id="addressLine1" required name="addressLine1" [(ngModel)]=customer.addressLine1>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+      <div class="col">
         <div class="form-group">
             <label for="power">Address Line 2</label>
-            <input type="text" class="form-control" id="addressLine2" required name="addressLine2">
+            <input type="text" class="form-control" id="addressLine2" required name="addressLine2" [(ngModel)]=customer.addressLine2>
           </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+            <label for="name">Type</label>
+            <select class="form-control" id="customerType" required name="customerType" [(ngModel)]=customer.customerType>
+              <option value="Buyer">Buyer</option>
+              <option value="Seller">Seller</option>
+              <option value="Broker">Broker</option>
+            </select>
+        </div>
+        </div>
+        <div class="col">
+        <div class="form-group">
+          <label for="name">Membership Plan</label>
+          <select class="form-control" id="membershipPlan" required name="membershipPlan" [(ngModel)]=customer.membershipPlan>
+            <option value="Quarterly">3 Months</option>
+            <option value="Semi-Annual">6 Months</option>
+            <option value="Annual">1 Year</option>
+          </select>
+      </div>
       </div>
     </div>
 
     <div class="d-grid gap-2 col-6 mx-auto mt-4">
-      <button class="btn btn-danger" type="button">Enroll</button>
-      <button class="btn btn-danger" type="button">Reset</button>
+      <button class="btn btn-color" type="button"  style="color: #00538C" (click)="enroll()">Enroll</button>
+      <button class="btn btn-color" type="button"  style="color: #00538C" (click)="clear()">Reset</button>
     </div>
   </div>

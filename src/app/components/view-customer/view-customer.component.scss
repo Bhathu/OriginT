@@ -1,0 +1,19 @@
+@mixin width {
+    width: auto !important;
+}
+table {
+    &.table-fit {
+        @include width;
+        table-layout: auto !important;
+        thead th,
+        tbody td,
+        tfoot th,
+        tfoot td  {
+            @include width;
+        }
+    }
+}
+
+.btn-color {
+    background-color: rgb(188, 230, 249);
+  }

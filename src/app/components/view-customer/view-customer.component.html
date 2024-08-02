@@ -1,0 +1,42 @@
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+            <input type="text" class="form-control" id="firstName" required name="firstName" [(ngModel)]=phoneNumber 
+            placeholder="Please enter Phone Number to search">
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="form-group">
+            <button class="btn btn-color" type="button"  style="color: #00538C" (click)="search()">Submit</button>
+          </div>
+      </div>
+    </div>
+   
+
+<div class="table-responsive mt-5">
+<table class="table table-sm table-bordered w-75">
+    <thead scope="row" class="thead-inverse">
+       <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Aadhar Number</th>
+            <th scope="col">Customer Type</th>
+            <th scope="col">Membership Plan</th>
+         </thead>
+    <tbody>
+            <tr scope="row" *ngFor="let customer  of customers; let index = index">
+                <td>{{index}}</td>
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.phoneNumber}}</td>
+                <td>{{customer.aadharNumber}}</td>
+                <td>{{customer.customerType}}</td>
+                <td>{{customer.membershipPlan}}</td>
+            </tr>
+        </tbody>
+</table>
+</div>
+</div>
